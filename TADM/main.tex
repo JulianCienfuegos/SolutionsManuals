@@ -1,0 +1,74 @@
+\documentclass[11pt]{report}
+
+%  This is for the main document
+\usepackage[left=1.5in,right=1.0in,top=2.0in,bottom=1.0in,
+  includefoot]{geometry}
+
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage{changepage}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage[font={small}]{caption}
+%\usepackage{amsrefs}
+
+%%%%%%%% Title Formatting.
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{}{\Large}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{3pt}{}
+
+\titleformat{\chapter}[hang] 
+{\normalfont\Large\bfseries\centering}{\chaptertitlename\ \thechapter:}{3pt}{} 
+
+
+\allowdisplaybreaks
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+\newcommand{\HRuleBig}{\rule{\linewidth}{0.7mm}}
+\linespread{1.5}
+
+% for table of contents
+\usepackage{tocloft}
+\renewcommand\cftchapdotsep{\cftdotsep}
+%\renewcommand\cftchapleader{\cftdotfill{\cftchapdotsep}}
+\renewcommand*\cfttoctitlefont{\hfil\Large\bfseries}
+\renewcommand*\cftloftitlefont{\hfil\Large\bfseries}
+
+
+% Formatting for code
+\lstset{language=C++,
+        basicstyle=\small,
+        keywordstyle=\color{blue}\ttfamily,
+        stringstyle=\color{red}\ttfamily,
+        commentstyle=\color{green}\ttfamily,
+ 		frame=single
+ }
+
+% formatting for the questions
+\newcommand{\question}[3]{\noindent\textbf{Problem #1}\newline\textbf{Question:} \textit{#2}\newline \textbf{Solution:} #3\newline}
+
+\begin{document}
+\input{./title.tex}
+\input{./copyright.tex}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\newgeometry{top=1.125in}
+\tableofcontents{}
+\newpage
+\listoffigures
+\clearpage
+\pagenumbering{arabic}
+\newgeometry{top=1.0in, left=1.50in, right=1.0in, bottom = 1.0in, includefoot}
+\clearpage
+\setcounter{page}{1}
+\input{./ch1.tex}
+\end{document}
